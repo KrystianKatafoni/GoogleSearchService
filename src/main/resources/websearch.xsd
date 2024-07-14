@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.katafoni.com/api"
+           targetNamespace="http://www.katafoni.com/api" elementFormDefault="qualified">
+
+    <xs:element name="searchPhraseRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="text" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="searchPhraseResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="item" maxOccurs="unbounded" type="tns:item"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="item">
+        <xs:sequence>
+            <xs:element name="title" type="xs:string"/>
+            <xs:element name="htmlTitle" type="xs:string"/>
+            <xs:element name="link" type="xs:string"/>
+            <xs:element name="displayLink" type="xs:string"/>
+            <xs:element name="snippet" type="xs:string"/>
+            <xs:element name="htmlSnippet" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
